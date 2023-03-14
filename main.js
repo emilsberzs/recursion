@@ -80,3 +80,21 @@ function ternaryRecursiveSumRange(n, total = 0) {
 }
 
 console.log(ternaryRecursiveSumRange(10))
+
+console.log('colatz gap')
+
+//COLATZ CONJECTURE
+function colatz(n) {
+    //base case
+    if (n == 1) {
+        return 0
+        //evens
+    } else if (n % 2 == 0) {
+        return 1 + colatz(n / 2)
+        //odds
+    } else {
+        return 1 + colatz(3 * n + 1)
+    }
+}
+
+console.log(colatz(50))
